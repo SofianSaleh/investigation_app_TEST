@@ -42,7 +42,7 @@ app_license = "MIT"
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# "Role": "home_page"
 # }
 
 # Generators
@@ -56,8 +56,8 @@ app_license = "MIT"
 
 # add methods and filters to jinja environment
 # jinja = {
-#	"methods": "investigation_app.utils.jinja_methods",
-#	"filters": "investigation_app.utils.jinja_filters"
+# "methods": "investigation_app.utils.jinja_methods",
+# "filters": "investigation_app.utils.jinja_filters"
 # }
 
 # Installation
@@ -99,11 +99,11 @@ app_license = "MIT"
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-#	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+# "Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
 #
 # has_permission = {
-#	"Event": "frappe.desk.doctype.event.event.has_permission",
+# "Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
 # DocType Class
@@ -111,40 +111,44 @@ app_license = "MIT"
 # Override standard doctype classes
 
 # override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
+# "ToDo": "custom_app.overrides.CustomToDo"
 # }
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+    'Sales Order': {
+        'before_validate': 'investigation_app.events.sales_order.before',
+        'validate': 'investigation_app.events.sales_order.after',
+    }
+    # "*": {
+    # 	"on_update": "method",
+    # 	"on_cancel": "method",
+    # 	"on_trash": "method"
+    # }
+}
 
 # Scheduled Tasks
 # ---------------
 
 # scheduler_events = {
-#	"all": [
-#		"investigation_app.tasks.all"
-#	],
-#	"daily": [
-#		"investigation_app.tasks.daily"
-#	],
-#	"hourly": [
-#		"investigation_app.tasks.hourly"
-#	],
-#	"weekly": [
-#		"investigation_app.tasks.weekly"
-#	],
-#	"monthly": [
-#		"investigation_app.tasks.monthly"
-#	],
+# "all": [
+# "investigation_app.tasks.all"
+# ],
+# "daily": [
+# "investigation_app.tasks.daily"
+# ],
+# "hourly": [
+# "investigation_app.tasks.hourly"
+# ],
+# "weekly": [
+# "investigation_app.tasks.weekly"
+# ],
+# "monthly": [
+# "investigation_app.tasks.monthly"
+# ],
 # }
 
 # Testing
@@ -156,14 +160,14 @@ app_license = "MIT"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "investigation_app.event.get_events"
+# "frappe.desk.doctype.event.event.get_events": "investigation_app.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-#	"Task": "investigation_app.task.get_dashboard_data"
+# "Task": "investigation_app.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -189,29 +193,29 @@ app_license = "MIT"
 # --------------------
 
 # user_data_fields = [
-#	{
-#		"doctype": "{doctype_1}",
-#		"filter_by": "{filter_by}",
-#		"redact_fields": ["{field_1}", "{field_2}"],
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_2}",
-#		"filter_by": "{filter_by}",
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_3}",
-#		"strict": False,
-#	},
-#	{
-#		"doctype": "{doctype_4}"
-#	}
+# {
+# "doctype": "{doctype_1}",
+# "filter_by": "{filter_by}",
+# "redact_fields": ["{field_1}", "{field_2}"],
+# "partial": 1,
+# },
+# {
+# "doctype": "{doctype_2}",
+# "filter_by": "{filter_by}",
+# "partial": 1,
+# },
+# {
+# "doctype": "{doctype_3}",
+# "strict": False,
+# },
+# {
+# "doctype": "{doctype_4}"
+# }
 # ]
 
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
-#	"investigation_app.auth.validate"
+# "investigation_app.auth.validate"
 # ]
