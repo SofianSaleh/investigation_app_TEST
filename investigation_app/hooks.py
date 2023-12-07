@@ -119,7 +119,7 @@ app_license = "MIT"
 # Hook on document methods and events
 
 doc_events = {
-    'Sales Order': {
+    'Sales Invoice': {
         'before_validate': 'investigation_app.events.sales_order.before',
         'validate': 'investigation_app.events.sales_order.after',
     }
